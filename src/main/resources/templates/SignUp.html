@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,57 +9,71 @@
     <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
-
 </head>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 <body>
 
 <div th:replace="header:: header"></div>
+<br><br><br><br><br><br><br><br><br>
 
-<form action="action_page.php">
-    <div class="container">
-        <h1><br><br>Register</h1>
-        <p><br>Please fill in this form to create an account.</p>
-        <hr>
+<div>
+    <form action="/action_page.php">
+        <label for="fname">First Name: </label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="email">Email Address:</label>
+        <input type="text" id="email" name="email" placeholder="Your email address..">
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        <label for="signUp">Sign Up As:</label>
+        <select id="signUp" name="signUp">
+            <option value="Donor">Donor</option>
+            <option value="Receiver">Receiver</option>
+            <option value="Driver">Driver</option>
+        </select>
 
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-        <hr>
-
-        <label class="form-control">
-            <input type="radio" name="radio" />
-            Radio
-        </label>
-
-        <label class="form-control">
-            <input type="radio" name="radio" />
-            Radio - checked
-        </label>
-
-
-        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        <button type="submit" class="registerbtn">Register</button>
-    </div>
-
-
-</form>
-
+        <input type="submit" value="Submit">
+    </form>
+</div>
 
 <div th:replace="footer:: footer"></div>
 
-<<<<<<< HEAD
 <!-- theme switch js (light and dark)-->
 <script src="assets/js/theme-change.js"></script>
 <!-- //theme switch js (light and dark)-->
-
-=======
->>>>>>> origin/master
 </body>
 </html>
+
+
